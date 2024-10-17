@@ -23,12 +23,21 @@ public class Days {
      */
     public static void main(String[] args) {
          
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
+   Scanner in = new Scanner(System.in);
+
+        System.out.println("Enter the day (e.g., MONDAY, TUESDAY, etc.):");
+        try {
+            Weekday day = Weekday.valueOf(in.next().toUpperCase());
+            Weekdays weekdays = new Weekdays();
+            weekdays.printDay(day);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid day. Please enter a valid day of the week.");
+        }
+
+        System.out.println("\nAll Days of the Week:");
+        for (Weekday d : Weekday.values()) {
+            System.out.println(d);
+        }
+    }
     
 }
