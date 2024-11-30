@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Course List</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Course List</h1>
+        
+        <!-- Table displaying the list of courses -->
+        <table>
+            <tr>
+                <th>Course Number</th>
+                <th>Course Title</th>
+                <th>Course Credit</th>
+            </tr>
+            
+            <!-- Loop through each course in the list and display data -->
+            <tr th:each="course : ${courses}">
+                <td th:text="${course.courseNumber}"></td>
+                <td th:text="${course.courseTitle}"></td>
+                <td th:text="${course.courseCredit}"></td>
+            </tr>
+        </table>
+
+        <!-- Links with improved spacing -->
+        <div style="margin-top: 20px;">
+            <a href="/courseDataInput">Add Another Course</a> |
+            <a href="/index">Home</a>
+        </div>
+    </div>
+
+    <!-- Footer insertion -->
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Course Catalog Management</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Course Catalog Management</h1>
+        <p><a th:href="@{/courseDataInput}">Add a Course</a></p>
+        <p><a th:href="@{/listOfCourses}">List Courses</a></p>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>
