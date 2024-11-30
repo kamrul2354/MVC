@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Data Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Product Data Confirmation</h3>
+        
+        <!-- Display product data for confirmation -->
+        <p th:text="'Product Code: ' + ${product.productCode}"></p>
+        <p th:text="'Product Brand: ' + ${product.productBrand}"></p>
+        <p th:text="'Quantity In Hand: ' + ${product.quantityInHand}"></p>
+        <p th:text="'Unit Price: ' + ${product.unitPrice}"></p>
+        
+        <!-- Confirmation form to post data to confirmProduct -->
+        <a href="/confirmProduct"
+           th:href="@{/confirmProduct(productCode=${product.productCode}, 
+           productBrand=${product.productBrand}, quantityInHand=${product.quantityInHand}, 
+           unitPrice=${product.unitPrice})}">
+            Confirm
+        </a>
+        <a href="/productDataInput">Edit</a>
+        <a href="/index">Cancel</a>
+    </div>
+    
+     <!-- Footer insertion -->
+    <div th:insert="footer :: footer"></div>
+</body>
+</html>
