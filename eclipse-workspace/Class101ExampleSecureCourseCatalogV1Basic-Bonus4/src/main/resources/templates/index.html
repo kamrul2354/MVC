@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Course Catalog Management</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>The Java EE application for Course Catalog Management</h1>
+        <p><a href="/AddCourse/courseDataInput">Add a Course</a></p> 
+        <p><a href="/ListOfCourses/listOfCourses">List Courses</a></p>
+        <p><a href="/EditCourse/editableListOfCourses">Edit Courses</a></p> 
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

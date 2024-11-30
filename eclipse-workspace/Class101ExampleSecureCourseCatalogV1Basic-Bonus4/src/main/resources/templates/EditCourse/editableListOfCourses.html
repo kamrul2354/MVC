@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editable Course List</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Editable Course List</h1>
+        <table>
+            <tr>
+                <th>Course Number</th>
+                <th>Course Title</th>
+                <th>Credits</th>
+                <th>Edit</th>
+            </tr>
+            <tr th:each="course : ${courses}">
+                <td th:text="${course.courseNumber}"></td>
+                <td th:text="${course.courseTitle}"></td>
+                <td th:text="${course.courseCredit}"></td>
+                <td><a th:href="@{/EditCourse/editCourse/{id}(id=${course.id})}">Edit</a></td>
+
+            </tr>
+        </table>
+        <div style="margin-top: 20px;">
+            <a th:href="@{/index}">Add Another Course</a> |
+            <a th:href="@{/index}">Home</a>
+        </div>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>
