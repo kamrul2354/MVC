@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Added</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${message}">Contact Added Successfully!</h1>
+        <a th:href="@{/index}">Home</a>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

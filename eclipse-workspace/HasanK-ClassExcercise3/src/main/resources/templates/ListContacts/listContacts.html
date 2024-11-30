@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact List</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Contact List</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <tr th:each="contact : ${contacts}">
+                <td th:text="${contact.name}"></td>
+                <td th:text="${contact.email}"></td>
+                <td th:text="${contact.phone}"></td>
+            </tr>
+        </table>
+        <a th:href="@{/accessDenied}">Add Another Course</a> |
+        <a th:href="@{/index}">Home</a>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

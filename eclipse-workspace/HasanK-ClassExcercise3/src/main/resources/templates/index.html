@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Secure Address Book</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Address Book</h1>
+        <p>Manage contacts securely with role-based access.</p>
+        <div class="links">
+            <p><a th:href="@{/AddContact/contactDataInput}">Add Contact</a></p>
+            <p><a th:href="@{/EditContact/editableListOfContacts}">Edit Contact</a></p>
+            <p><a th:href="@{/ListContacts/listContacts}">List Contacts</a></p>
+        </div>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

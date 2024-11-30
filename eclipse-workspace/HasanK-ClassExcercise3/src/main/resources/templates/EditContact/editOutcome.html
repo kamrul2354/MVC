@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Outcome</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${message}">Edit Outcome</h1>
+        <a th:href="@{/EditContact/editableListOfContacts}">Back to Contact List</a>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

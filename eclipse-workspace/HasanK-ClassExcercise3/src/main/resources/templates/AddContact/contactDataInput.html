@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Contact</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Add Contact</h1>
+        <form th:action="@{/AddContact/contactDataInput}" th:object="${contact}" method="post">
+            <div class="form-group">
+                <label>Contact Name:</label>
+                <input type="text" th:field="*{name}" required />
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" th:field="*{email}" required />
+            </div>
+            <div class="form-group">
+                <label>Phone:</label>
+                <input type="text" th:field="*{phone}" required />
+            </div>
+            <input type="submit" value="Submit" />
+            <a th:href="@{/index}" class="home-button">Home</a>
+        </form>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>
