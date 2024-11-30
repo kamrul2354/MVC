@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Contact</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Contact</h1>
+        <form th:action="@{/updateContact}" th:object="${contact}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" th:field="*{firstName}" />
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" th:field="*{lastName}" />
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="text" th:field="*{phoneNumber}" />
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" th:field="*{email}" />
+            </div>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+        <a th:href="@{/editableListOfContacts}" class="button cancel-button">Cancel</a>
+        <div th:insert="fragments/footer :: footer"></div>
+    </div>
+</body>
+</html>

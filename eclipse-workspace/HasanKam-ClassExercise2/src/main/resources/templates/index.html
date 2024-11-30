@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address Book</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Address Book</h1>
+        <p><a th:href="@{/contactDataInput}">Add Contact</a></p>
+        <p><a th:href="@{/listOfContacts}">List Contacts</a></p>
+        <p><a th:href="@{/editableListOfContacts}">Edit Contacts</a></p>
+    </div>
+    <div th:insert="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>
