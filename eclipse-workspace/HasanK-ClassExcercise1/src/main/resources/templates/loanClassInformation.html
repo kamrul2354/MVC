@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Information</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Loan Information</h3>
+
+        <!-- Loan table -->
+        <table>
+            <tr>
+                <th>Loan Amount</th>
+                <th>Annual Interest Rate</th>
+                <th>Duration (Years)</th>
+                <th>Monthly Payment</th>
+                <th>Total Payment</th>
+            </tr>
+
+            <!-- Loop through each loan in the list -->
+            <tr th:each="loan : ${loans}">
+                <td th:text="${loan.loanAmount}"></td>
+                <td th:text="${loan.annualInterestRate}"></td>
+                <td th:text="${loan.duration}"></td>
+                <td th:text="${loan.getMonthlyPayment()}"></td>
+                <td th:text="${loan.getTotalPayment()}"></td>
+            </tr>
+        </table>
+
+        <a href="/loanClassDataInput">Enter Another Loan</a>
+        <a href="/index">Cancel</a>
+    </div>
+
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

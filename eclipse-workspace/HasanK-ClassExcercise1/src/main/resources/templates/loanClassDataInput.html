@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Data Input</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Data Input Form</h1>
+        <form action="/loanClassData" th:object="${loan}" method="get">
+            <p>Loan Amount: <input type="text" th:field="*{loanAmount}" /></p>
+            <p>Annual Interest Rate: <input type="text" th:field="*{annualInterestRate}" /></p>
+            <p>Duration (in years): <input type="text" th:field="*{duration}" /></p>
+            <p><input type="submit" value="Submit" /></p>
+            <p><input type="reset" value="Reset" /></p>
+        </form>
+        <p><a href="/index">Cancel</a></p>
+    </div>
+
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

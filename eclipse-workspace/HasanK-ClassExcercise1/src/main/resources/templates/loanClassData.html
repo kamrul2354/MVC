@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Loan Data</title>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Confirm Loan Data</h3>
+        <p>Loan Amount: <span th:text="${loan.loanAmount}"></span></p>
+        <p>Annual Interest Rate: <span th:text="${loan.annualInterestRate}"></span></p>
+        <p>Duration (in years): <span th:text="${loan.duration}"></span></p>
+
+        <a href="/confirmLoan" th:href="@{/confirmLoan(loanAmount=${loan.loanAmount}, 
+            annualInterestRate=${loan.annualInterestRate}, duration=${loan.duration})}">
+            Confirm
+        </a>
+        <a href="/loanClassDataInput">Edit</a>
+        <a href="/index">Cancel</a>
+    </div>
+
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>
