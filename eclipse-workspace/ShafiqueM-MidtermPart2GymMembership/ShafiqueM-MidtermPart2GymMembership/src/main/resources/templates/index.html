@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="/fragments/general.html :: headerFiles"> </head>
+<body>
+	<header th:insert="/fragments/general.html :: header"> </header>
+	<p> Midterm Exam Part 2 </p>
+	
+	<a href="/GymMemberInput">Add a Member</a> <br>
+	<a href="/GymMemberList">List Members</a> <br>
+	
+	<div th:replace="/fragments/general.html :: footer"></div>	
+</body>
+</html>

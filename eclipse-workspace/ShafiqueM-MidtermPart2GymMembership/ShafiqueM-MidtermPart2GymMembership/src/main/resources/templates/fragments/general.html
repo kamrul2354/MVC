@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- Thymeleaf fragment "headerFiles" definition -->
+<head th:fragment="headerFiles">
+	<meta charset="UTF-8" />
+	<link th:href="@{/styles/main.css}" rel="stylesheet">
+	<title> MidtermExamPart2</title>
+</head>
+
+<body>
+	<!-- Thymeleaf fragment "header" definition -->
+    <div th:fragment="header">
+        <h1>Gym Membership Application</h1>
+    </div>
+    
+    <!-- Thymeleaf fragment "footer" definition -->
+    <footer th:fragment="footer">
+    <p> ---------------------------------------------------------- </p>
+        <p>PROG32758 Enterprise Java Development Fall 2024 </p> 
+        <p>Muhammad Shafique </p>
+        <a th:href="@{/index}">Home</a>
+    <p> ---------------------------------------------------------- </p>
+    
+    </footer>  
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="/fragments/general.html :: headerFiles"> </head>
+<body>
+	<header th:insert="/fragments/general.html :: header"> </header>
+ 	<h3> Gym Members List </h3> 
+ <table>
+	<tr>
+		<th>Member Name</th>
+		<th>Member Email</th>
+		<th>Member Phone</th>
+	</tr>
+	<tr th:each="aMember:${members}">
+		<td th:text="${aMember.memberName}"></td>
+		<td th:text="${aMember.memberEmail}"></td>
+		<td th:text="${aMember.memberPhone}"></td>
+	</tr>
+</table>	
+	
+	<p> <a href="/index"> Home </a> </p>
+	
+	<div th:replace="/fragments/general.html :: footer"></div>
+</body>	
+</html>
